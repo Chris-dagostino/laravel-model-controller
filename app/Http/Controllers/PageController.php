@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use App\Movie;
 use Illuminate\Http\Request;
 
-class PageControl extends Controller
+class PageController extends Controller
 {
     public function index(){
 
-        $movies = Movie::all();
-        dd($movies);
-        return view('home');
+        $Movies = Movie::all();
+        return view('home', ['Movies'=> $Movies]);
     }
 }
